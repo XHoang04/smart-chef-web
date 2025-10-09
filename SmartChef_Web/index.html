@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartChef</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero-section" id="home">
+        <div class="header-nav">
+            <div class="header-overlay"></div>
+            <div class="logo">
+                <img src="img/logo1.png" alt="Smart Chef Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#services">Services</a>
+                <a href="#download" class="btn-download">Download</a>
+            </nav>
+        </div>
+    
+        <div class="hero-content">
+            <p class="discover-text fade-in-up">Discover Your Taste</p>
+            <h1 class="fade-in-up">We believe good food<br> offers great smiles</h1>
+            <p class="hero-desc fade-in-up">We offer a delectable selection of dishes crafted with the freshest ingredients, promising a culinary journey that delights your senses.</p>
+            <a href="#menu" class="btn-reservation fade-in-up">Reservation</a>
+        </div>
+    </header>
+
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <p class="section-subheading">Discover great flavors</p>
+            <h2>A menu that awakens all the senses</h2>
+            <div class="menu-categories">
+                <a href="#" class="menu-btn active" data-category="special">Special</a>
+                <a href="#" class="menu-btn" data-category="breakfast">Breakfast</a>
+                <a href="#" class="menu-btn" data-category="lunch">Lunch</a>
+                <a href="#" class="menu-btn" data-category="dinner">Dinner</a>
+            </div>
+        </div>
+        
+        <div class="menu-content"> 
+            <div id="special" class="menu-gallery active">
+                <img src="img/special-item-1.png" alt="Special 1">
+                <img src="img/special-item-2.png" alt="Special 2">
+                <img src="img/special-item-3.png" alt="Special 3">
+            </div>
+            <div id="breakfast" class="menu-gallery hidden">
+                <img src="img/bf-item-1.png" alt="Breakfast 1">
+                <img src="img/bf-item-2.png" alt="Breakfast 2">
+                <img src="img/bf-item-3.png" alt="Breakfast 3">
+            </div>
+            <div id="lunch" class="menu-gallery hidden">
+                <img src="img/lunch-item-1.png" alt="Lunch 1">
+                <img src="img/lunch-item-2.png" alt="Lunch 2">
+                <img src="img/lunch-item-3.png" alt="Lunch 3">
+            </div>
+            <div id="dinner" class="menu-gallery hidden">
+                <img src="img/dinner-item-1.png" alt="Dinner 1">
+                <img src="img/dinner-item-2.png" alt="Dinner 2">
+                <img src="img/dinner-item-3.png" alt="Dinner 3">
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <p class="section-subheading">Services We Offer</p>
+            <h2>Our Best Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="60px" height="60px" baseProfile="basic">
+                        <path d="M14.217,19.707l-1.112,2.547c-0.427,0.979-1.782,0.979-2.21,0l-1.112-2.547c-0.99-2.267-2.771-4.071-4.993-5.057L1.73,13.292c-0.973-0.432-0.973-1.848,0-2.28l2.965-1.316C6.974,8.684,8.787,6.813,9.76,4.47l1.126-2.714c0.418-1.007,1.81-1.007,2.228,0L14.24,4.47c0.973,2.344,2.786,4.215,5.065,5.226l2.965,1.316c0.973,0.432,0.973,1.848,0,2.28l-3.061,1.359C16.988,15.637,15.206,17.441,14.217,19.707z" fill="currentColor"/>
+                        <path d="M24.481,27.796l-0.339,0.777c-0.248,0.569-1.036,0.569-1.284,0l-0.339-0.777c-0.604-1.385-1.693-2.488-3.051-3.092l-1.044-0.464c-0.565-0.251-0.565-1.072,0-1.323l0.986-0.438c1.393-0.619,2.501-1.763,3.095-3.195l0.348-0.84c0.243-0.585,1.052-0.585,1.294,0l0.348,0.84c0.594,1.432,1.702,2.576,3.095,3.195l0.986,0.438c0.565,0.251,0.565,1.072,0,1.323l-1.044,0.464C26.174,25.308,25.085,26.411,24.481,27.796z" fill="currentColor"/>
+                    </svg>
+                    <h3>Smart AI</h3>
+                    <p>Our product analyzes ingredients to suggest the most suitable recipes. Everything is at your fingertips.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Quality Recipes</h3>
+                    <p>We've curated high-quality recipes from around the world to give you confidence in the kitchen.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-concierge-bell"></i>
+                    <h3>Perfect Cooking</h3>
+                    <p>Our app guides you step by step with clear instructions to cook the perfect dish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-overlay"></div>
+        <div class="container about-content">
+            <div class="about-text-form">
+                <p class="section-subheading">About Our App</p>
+                <h2>We Provide Good Meals <br> For Your Family!</h2>
+                <p>Your meal will be more delicious and better when using our service. Leave your email to receive useful information.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" style="padding: 80px 0; background: #fff; text-align: center;">
+        <div class="container">
+            <p class="section-subheading">Get Started Today</p>
+            <h2>Download Our App</h2>
+            <p style="max-width: 600px; margin: 20px auto 40px; color: #666;">Experience the best cooking companion right on your phone. Available on iOS and Android.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#" class="download-btn" data-platform="appstore">
+                    <i class="fab fa-apple"></i> App Store
+                </a>
+                <a href="#" class="download-btn" data-platform="googleplay">
+                    <i class="fab fa-google-play"></i> Google Play
+                </a>
+                <a href="#" class="download-btn download-apk" data-platform="apk">
+                    <i class="fab fa-android"></i> Download APK
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="All Food Logo">
+                <p>Your best choice for delicious meals every day! We bring quality recipes and smart cooking solutions to your kitchen.</p>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+84 123 456 789</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-nav">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Our Menu</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#download">Download App</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-hours">
+                <h4>App Support</h4>
+                <div class="hours-list">
+                    <div class="hours-item">
+                        <span>Available</span>
+                        <span>24/7</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>Recipe Updates</span>
+                        <span>Daily</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>AI Support</span>
+                        <span>Real-time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <p>Follow us on social media for updates, recipes, and special offers!</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
