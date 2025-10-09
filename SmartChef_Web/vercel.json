@@ -1,9 +1,9 @@
 {
   "version": 2,
   "builds": [
-    { "src": "SmartChef_Web/index.html", "use": "@vercel/static" }
+    { "src": "index.html", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/SmartChef_Web/$1" }
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
