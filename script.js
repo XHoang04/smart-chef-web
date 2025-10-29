@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Menu Gallery Switching
+    // =============================
+    // MENU GALLERY SWITCH WITH FADE
+    // =============================
     const menuButtons = document.querySelectorAll('.menu-btn');
     const menuGalleries = document.querySelectorAll('.menu-gallery');
 
@@ -7,27 +9,38 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(e) {
             e.preventDefault();
 
-            // Loại bỏ class 'active' khỏi tất cả các nút
+            // Bỏ active ở tất cả nút
             menuButtons.forEach(btn => btn.classList.remove('active'));
-
-            // Thêm class 'active' cho nút vừa được nhấp
             this.classList.add('active');
 
-            // Ẩn tất cả các khối menu
-            menuGalleries.forEach(gallery => gallery.classList.add('hidden'));
-
-            // Lấy ID của khối menu cần hiển thị
             const category = this.getAttribute('data-category');
             const targetGallery = document.getElementById(category);
 
-            // Hiển thị khối menu tương ứng
-            if (targetGallery) {
+            if (!targetGallery) return;
+
+            // Hiệu ứng fade-out cho tất cả gallery
+            menuGalleries.forEach(gallery => {
+                if (!gallery.classList.contains('hidden')) {
+                    gallery.classList.add('fade-out');
+                    setTimeout(() => {
+                        gallery.classList.add('hidden');
+                        gallery.classList.remove('fade-out');
+                    }, 400); // thời gian khớp với CSS transition
+                }
+            });
+
+            // Hiển thị gallery mới với hiệu ứng fade-in
+            setTimeout(() => {
                 targetGallery.classList.remove('hidden');
-            }
+                targetGallery.classList.add('fade-in');
+                setTimeout(() => targetGallery.classList.remove('fade-in'), 400);
+            }, 400);
         });
     });
 
-    // Hamburger Menu Toggle
+    // =============================
+    // HAMBURGER MENU TOGGLE
+    // =============================
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
@@ -38,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close menu when clicking on a link
+    // Đóng menu khi click vào link
     const navLinksItems = document.querySelectorAll('.nav-links a');
     navLinksItems.forEach(link => {
         link.addEventListener('click', function() {
@@ -47,18 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close menu when clicking outside
+    // Đóng menu khi click ra ngoài
     document.addEventListener('click', function(event) {
         const isClickInsideNav = navLinks.contains(event.target);
         const isClickOnHamburger = hamburger.contains(event.target);
-        
+
         if (!isClickInsideNav && !isClickOnHamburger && navLinks.classList.contains('active')) {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
         }
     });
 
-    // Download Buttons Alert
+    // =============================
+    // DOWNLOAD BUTTONS ALERT
+    // =============================
     const appstoreBtn = document.querySelector('.download-btn[data-platform="appstore"]');
     const googleplayBtn = document.querySelector('.download-btn[data-platform="googleplay"]');
 
@@ -76,13 +91,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Hero Content Fade In Animation
+    // =============================
+    // HERO CONTENT FADE-IN
+    // =============================
     const heroElements = document.querySelectorAll('.hero-content .fade-in-up');
-
-    // Thêm delay cho từng phần tử
     heroElements.forEach((element, index) => {
         setTimeout(() => {
             element.classList.add('show');
-        }, index * 200); // 200ms delay giữa mỗi phần tử
+        }, index * 200);
     });
 });
