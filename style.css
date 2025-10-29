@@ -139,7 +139,8 @@ h2 {
     font-weight: 500;
     transition: color 0.3s;
 }
-/* --- Download Button in Navbar --- */
+
+/* Download Button in Navbar */
 .nav-links .btn-download {
     border: 2px solid #ff7f50;
     color: #333;
@@ -155,7 +156,6 @@ h2 {
     color: #fff;
     box-shadow: 0 0 10px rgba(255, 127, 80, 0.5);
 }
-
 
 .nav-links a:hover {
     color: #ff7f50;
@@ -289,7 +289,38 @@ h2 {
     display: none;
 }
 
-/* Footer - Redesigned */
+/* Download Section Buttons */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 36px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.download-btn[data-platform="appstore"],
+.download-btn[data-platform="googleplay"],
+.download-btn[data-platform="apk"] {
+    background: linear-gradient(135deg, #000, #333);
+}
+
+.download-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    opacity: 0.9;
+}
+
+.download-btn i {
+    font-size: 20px;
+}
+
+/* Footer */
 .footer {
     background-image: url('img/footer_bg.png');
     background-size: cover;
@@ -327,7 +358,7 @@ h2 {
     width: 130px;
     height: auto;
     margin-bottom: 20px;
-    filter:none;
+    filter: none;
 }
 
 .footer-logo p {
@@ -602,7 +633,7 @@ h2 {
     background-color: #e56b40;
 }
 
-/* Hiệu ứng Fade In Up */
+/* Fade In Up Animation */
 .fade-in-up {
     opacity: 0;
     transform: translateY(20px);
@@ -613,112 +644,233 @@ h2 {
     opacity: 1;
     transform: translateY(0);
 }
-/* --- Download Section Buttons --- */
-.download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 36px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    color: #fff;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
 
-/* Nền riêng cho từng nền tảng */
-.download-btn[data-platform="appstore"] {
-    background: linear-gradient(135deg, #000, #333);
-}
+/* ============================================ */
+/* RESPONSIVE - MOBILE OPTIMIZED */
+/* ============================================ */
 
-.download-btn[data-platform="googleplay"] {
-    background: linear-gradient(135deg, #000, #333);
-}
-
-.download-btn[data-platform="apk"] {
-    background: linear-gradient(135deg, #000, #333);
-}
-
-/* Hiệu ứng khi hover */
-.download-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-    opacity: 0.9;
-}
-
-/* Biểu tượng trong nút */
-.download-btn i {
-    font-size: 20px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .download-btn {
-        width: 80%;
-        justify-content: center;
-    }
-}
-
-
-/* Responsive */
+/* Tablet */
 @media (max-width: 968px) {
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
     .footer-content {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
+
+    .about-text-form {
+        width: 70%;
+        padding-left: 40px;
+    }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
+    /* Header Navigation */
     .header-nav {
         flex-direction: column;
         align-items: center;
-        padding: 20px;
+        padding: 15px 20px;
+        background-color: rgba(255, 249, 249, 0.95);
+    }
+
+    .header-nav .logo img {
+        width: 70px;
     }
 
     .nav-links {
-        margin-top: 20px;
+        margin-top: 15px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 10px;
-        text-align: center;
+        justify-content: center;
     }
     
     .nav-links a {
         margin: 0;
+        font-size: 14px;
     }
 
-    .hero-content h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.5em; 
-        line-height: 1.2;
-        margin-bottom: 20px;
+    .nav-links .btn-download {
+        padding: 6px 14px;
+        font-size: 14px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 20px 40px;
     }
 
     .hero-content {
         margin-left: 0;
-        padding: 0 20px;
+        padding: 0;
         text-align: center;
         align-items: center;
+        max-width: 100%;
     }
 
-    .services-grid {
-        grid-template-columns: 1fr;
+    .hero-content h1 {
+        font-size: 2em;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+
+    .discover-text {
+        font-size: 0.9em;
+    }
+
+    .hero-desc {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .btn-reservation {
+        padding: 12px 30px;
+        font-size: 0.95em;
+    }
+
+    /* Menu Section */
+    .menu-section {
+        padding-top: 60px;
+    }
+
+    .menu-categories {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .menu-btn {
+        padding: 8px 18px;
+        font-size: 0.9em;
+        margin: 5px;
     }
 
     .menu-gallery {
         grid-template-columns: 1fr;
     }
 
+    .menu-gallery img {
+        height: 300px;
+    }
+
+    /* Services Section */
+    .services-section {
+        padding: 60px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .service-item {
+        padding: 25px;
+    }
+
+    .service-item i,
+    .service-item svg {
+        font-size: 2.5em;
+        width: 50px;
+        height: 50px;
+    }
+
+    /* About Section */
+    .about-section {
+        height: auto;
+        min-height: 60vh;
+        padding: 60px 0;
+    }
+
+    .about-text-form {
+        float: none;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .about-text-form .section-subheading,
+    .about-text-form h2 {
+        text-align: center;
+    }
+
+    .about-text-form h2 {
+        font-size: 1.8em;
+    }
+
+    .about-text-form p {
+        text-align: center;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .subscribe-form input,
+    .subscribe-form button {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    /* Download Section */
+    #download {
+        padding: 60px 0 !important;
+    }
+
+    #download h2 {
+        font-size: 1.8em;
+    }
+
+    #download p {
+        font-size: 0.95em;
+        padding: 0 20px;
+    }
+
+    .download-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 0 10px;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 30px;
         text-align: left;
+        padding: 0 20px 30px;
     }
 
     .footer-logo {
         padding-right: 0;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        width: 100px;
+    }
+
+    .footer-logo p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .footer-contact {
+        align-items: center;
     }
 
     .footer-nav,
@@ -726,9 +878,82 @@ h2 {
         padding-left: 0;
     }
 
-    .about-text-form {
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+    .footer-nav h4,
+    .footer-hours h4,
+    .footer-social h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .footer-nav h4::after,
+    .footer-hours h4::after,
+    .footer-social h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-nav ul {
+        text-align: center;
+    }
+
+    .footer-social {
+        text-align: center;
+    }
+
+    .footer-social p {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .hours-item {
+        font-size: 13px;
+    }
+
+    .footer-bottom {
+        padding: 20px 15px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em !important;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .section-subheading {
+        font-size: 0.85em;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6em;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .menu-btn {
+        padding: 7px 15px;
+        font-size: 0.85em;
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+
+    .download-btn {
+        padding: 10px 25px;
+        font-size: 14px;
     }
 }
