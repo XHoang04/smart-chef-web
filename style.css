@@ -715,13 +715,21 @@ h2 {
         padding: 0 20px;
     }
 
-    /* Header Navigation */
+   /* Header Navigation (Fixed for mobile layout) */
     .header-nav {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        padding: 15px 20px;
-        background-color: rgba(255, 249, 249, 0.95);
+        padding: 12px 20px;
+        background-color: rgba(255, 255, 255, 0.96);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
+
 
     .header-nav .logo img {
         width: 70px;
@@ -977,6 +985,76 @@ h2 {
 
     .footer-bottom p {
         font-size: 12px;
+    }
+}
+/* ------------------------------ */
+/* HAMBURGER MENU FIX (MOBILE)    */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+    /* Hiển thị hamburger trên mobile */
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 28px;
+        height: 22px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 9999;
+        position: relative;
+    }
+
+    /* Ẩn nav-links mặc định, chỉ hiện khi active */
+    .nav-links {
+        display: none !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: absolute;
+        top: 75px; /* điều chỉnh theo header của bạn */
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.97);
+        padding: 20px 0;
+        gap: 15px;
+        border-top: 1px solid #eee;
+        z-index: 99;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        animation: fadeDown 0.3s ease;
+    }
+
+    /* Khi bật menu */
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    /* Căn giữa các link */
+    .nav-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        padding: 10px 0;
+        color: #333;
+    }
+
+    /* Animation hamburger */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Animation hiển thị menu */
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 }
 
