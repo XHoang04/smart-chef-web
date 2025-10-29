@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Menu Gallery Switching
     const menuButtons = document.querySelectorAll('.menu-btn');
     const menuGalleries = document.querySelectorAll('.menu-gallery');
 
@@ -25,28 +26,57 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
-// Thông báo khi click vào các nút download chưa hoạt động
-document.addEventListener("DOMContentLoaded", () => {
-  const appstoreBtn = document.querySelector('.download-btn[data-platform="appstore"]');
-  const googleplayBtn = document.querySelector('.download-btn[data-platform="googleplay"]');
 
-  if (appstoreBtn) {
-    appstoreBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Ứng dụng đang được phát triển. Vui lòng quay lại sau!");
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close menu when clicking on a link
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+    navLinksItems.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
     });
-  }
 
-  if (googleplayBtn) {
-    googleplayBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      alert("Ứng dụng đang được phát triển. Vui lòng quay lại sau!");
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navLinks.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnHamburger && navLinks.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
     });
-  }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    // Download Buttons Alert
+    const appstoreBtn = document.querySelector('.download-btn[data-platform="appstore"]');
+    const googleplayBtn = document.querySelector('.download-btn[data-platform="googleplay"]');
+
+    if (appstoreBtn) {
+        appstoreBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            alert("Ứng dụng đang được phát triển. Vui lòng quay lại sau!");
+        });
+    }
+
+    if (googleplayBtn) {
+        googleplayBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            alert("Ứng dụng đang được phát triển. Vui lòng quay lại sau!");
+        });
+    }
+
+    // Hero Content Fade In Animation
     const heroElements = document.querySelectorAll('.hero-content .fade-in-up');
 
     // Thêm delay cho từng phần tử
