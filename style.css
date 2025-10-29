@@ -743,7 +743,7 @@ h2 {
         gap: 10px;
         justify-content: center;
     }
-    
+        
     .nav-links a {
         margin: 0;
         font-size: 14px;
@@ -753,6 +753,7 @@ h2 {
         padding: 6px 14px;
         font-size: 14px;
     }
+
 
     /* Hero Section */
     .hero-section {
